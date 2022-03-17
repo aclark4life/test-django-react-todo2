@@ -7,6 +7,7 @@ import "bootstrap/dist/js/bootstrap.bundle";
 
 // We can import other JS file as we like
 import "../components/sidebar";
+import "../components/Todo";
 
 window.document.addEventListener("DOMContentLoaded", function () {
   window.console.log("dom ready 1");
