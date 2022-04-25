@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import Modal from "./components/Modal";
+import { Component } from "react";
 import axios from "axios";
 
 const todoItems = [
@@ -29,7 +28,7 @@ const todoItems = [
   },
 ];
 
-class App extends Component {
+class Todo extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -189,4 +188,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Todo;

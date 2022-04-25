@@ -2,7 +2,7 @@
 {% load webpack_loader static %}
 {% block body_class %}template-homepage{% endblock %}
 {% block extra_css %}
-  {% stylesheet_pack 'app' %}
+  {% stylesheet_pack 'app' 'todo' %}
 {% endblock extra_css %}
 {% block content %}
 {% load webpack_loader static %}
@@ -22,5 +22,5 @@
 </div>
 {% endblock content %}
 {% block extra_js %}
-{% javascript_pack 'app' 'app2' attrs='charset="UTF-8"' %}
+{% javascript_pack 'app' 'app2' 'todo' attrs='charset="UTF-8"' %}
 {% endblock %}
