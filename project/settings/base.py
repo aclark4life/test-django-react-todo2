@@ -168,3 +168,24 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+# project
+
+ALLOWED_HOSTS = ['*']
+
+import dj_database_url, os
+DATABASE_URL = os.environ.get('DATABASE_URL', 	'postgres://:@:/project')
+DATABASES['default'] = dj_database_url.parse(DATABASE_URL)
+INSTALLED_APPS.append('webpack_boilerplate')
+INSTALLED_APPS.append('rest_framework')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build')]
+WEBPACK_LOADER = { 'MANIFEST_FILE': os.path.join(BASE_DIR, 'frontend/build/manifest.json'), }
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+LOGIN_REDIRECT_URL = '/'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
